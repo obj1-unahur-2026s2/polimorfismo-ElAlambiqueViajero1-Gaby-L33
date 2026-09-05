@@ -1,0 +1,14 @@
+import alambiqueViajero1.*
+import ciudadesAViajar.*
+
+describe "Test del alambiqueViajero1 y ciudadesAViajar"{
+    test "El recuerdo de Luke delspues del viaje a París es un llavero de la Torre Eiffel"{
+        paris.viajar()
+        assert.equals("llavero de la Torre Eiffel", luke.recuerdo())
+    }
+
+    test "El recuerdo de Luke despues del viaje a Buenos Aires es un mate con yerba"{
+        buenosAires.viajar()
+        assert.equals("mate con yerba", luke.recuerdo())
+    }
+}

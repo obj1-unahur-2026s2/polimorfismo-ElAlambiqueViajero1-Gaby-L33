@@ -44,7 +44,7 @@ Nuevos requerimientos:
 Se agregan otros vehículos que puede usar Luke para viajar, en vez del Alambique Veloz: 
 - El súper chatarra especial puede tener caniones puestos o no. Al inicio está sin los caniones, pero cada vez que visita una ciudad, pone los caniones si no los tenía puestos, o los quita si ya los tenía puestos.
 Su combustible es 50 si tiene los caniones puestos, si no 80 y no requiere recargar, siempre tiene la cantidad según la condición ya descripta. Nunca es rápido. 
-- La Antigualla Blindada tiene una cantidad de gangster variable, arranca en 5 pero se puede cambiar por cualquier valor mayor  igual que 1. Es rádida si tiene menos de 7 gangsters.  Siempre tiene 50 unidades de combustible y no se consume. Cuando visita una ciudad no le pasa nada, no sufre ninguna consecuencia.
+- La Antigualla Blindada tiene una cantidad de gangster variable, arranca en 5 pero se puede cambiar por cualquier valor mayor  igual que 1. Es rápida si tiene menos de 7 gangsters.  Siempre tiene 50 unidades de combustible y no se consume. Cuando visita una ciudad no le pasa nada, no sufre ninguna consecuencia.
 
 Definir 2 vehículos más, su estado interno y su comportamiento con creatividad, de manera que a pesar de ser diferentes, puedan también ser usados por Luke para viajar de acuerdo a lo planteado anteriormente. 
 

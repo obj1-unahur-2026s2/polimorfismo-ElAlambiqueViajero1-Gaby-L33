@@ -7,11 +7,14 @@ object paris{
     method recuerdo() = "llavero de la Torre Eiffel" 
 
     method viajar(){
-        if(luke.vehiculo().combustible() > 0){
+        if(luke.vehiculo().combustible() >= 10){
             luke.vehiculo().viajar()
             luke.cambiarRecuerdo(self.recuerdo())
-            cambiarCiudadHomenajeada(paris)
+            luke.cambiarCiudadHomenajeada(self)
             luke.sumarLugarVisitado()
+        }
+        else{
+            console.println("No hay suficiente combustible para viajar a París.")
         }
     }
 }
@@ -39,8 +42,11 @@ object buenosAires{
         if(luke.vehiculo().esVeloz()){
             luke.vehiculo().viajar()
             luke.cambiarRecuerdo(self.recuerdo())
-            cambiarCiudadHomenajeada(buenosAires)
+            luke.cambiarCiudadHomenajeada(self)
             luke.sumarLugarVisitado()
+        }
+        else{
+            console.println("El vehículo no es lo suficientemente veloz para viajar a Buenos Aires.")
         }
     }
 }
@@ -66,7 +72,7 @@ object bagdad{
     method viajar(){
         luke.vehiculo().viajar()
         luke.cambiarRecuerdo(self.recuerdo())
-        cambiarCiudadHomenajeada(bagadad)
+        luke.cambiarCiudadHomenajeada(self)
         luke.sumarLugarVisitado()
     }
 }
@@ -80,9 +86,7 @@ recordando a Buenos Aires, sería el mate.
 */
 
 object lasVegas{
-    var recuerdoActual = recuerdoConmemorado()
-
-    method recuerdo() = luke.ciudadHomenajeada()
+    method recuerdo() = luke.ciudadHomenajeada().recuerdo()
 
     method viajar(){
         luke.ciudadHomenajeada().viajar()
@@ -100,8 +104,11 @@ object rioDeJanerio{
         if(luke.vehiculo().combustible() > 20){
             luke.vehiculo().viajar()
             luke.cambiarRecuerdo(self.recuerdo())
-            cambiarCiudadHomenajeada(rioDeJanerio)
+            luke.cambiarCiudadHomenajeada(self)
             luke.sumarLugarVisitado()
+        }
+        else{
+            console.println("No hay suficiente combustible para viajar a Río de Janeiro.")
         }
     }
 }

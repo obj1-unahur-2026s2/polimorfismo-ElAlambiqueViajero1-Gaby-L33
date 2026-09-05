@@ -32,10 +32,6 @@ object luke{
         cantidadDeLugaresVisitados += 1
     }
 
-    method cambiarCiudadHomenajeada(nuevaCiudad){
-        ciudadHomenajeadaActual = nuevaCiudad
-    }
-
     method vehiculo() = vehiculoActual
 
     method cambiarVehiculo(nuevoVehiculo){
@@ -46,6 +42,10 @@ object luke{
 
         cantidadDeLugaresVisitados += 1
     }
+
+    method recuerdo() = recuerdoActual
+
+    method lugaresVisitados() = cantidadDeLugaresVisitados
 }
 
 /*
@@ -60,7 +60,7 @@ object alambiqueVeloz{
 
     method combustible() = combustible
 
-    method esVeloz() = True
+    method esVeloz() = true
 
     method viajar(){
         combustible = 0.max(combustible - 10)
@@ -81,15 +81,103 @@ requiere recargar, siempre tiene la cantidad según la condición ya descripta.
 */
 
 object superChatarraEspecial{
-    var combustible = 50
+    var combustible = 80
     var cañionesPuestos = false
 
     method combustible() = combustible
 
-    method esVeloz() = True
+    method losCañoneEstanPuestos() = cañionesPuestos
+
+    method esVeloz() = false
+
+    method viajar(){
+        if(not cañionesPuestos){
+            cañionesPuestos = true
+            combustible = 50
+        }
+        else{
+            cañionesPuestos = false
+            combustible = 80
+        }
+    }
+
+}
+
+/*
+La Antigualla Blindada tiene una cantidad de gangster variable, 
+arranca en 5 pero se puede cambiar por cualquier valor mayor  
+igual que 1. Es rápida si tiene menos de 7 gangsters.  Siempre 
+tiene 50 unidades de combustible y no se consume. Cuando visita 
+una ciudad no le pasa nada, no sufre ninguna consecuencia.
+*/
+
+object antiguallaBlindada{
+    var cantidadDeGansgters = 5
+
+    method combustible() = 50
+
+    method cambiarCantidadDeGansgters(nuevaCantidad){
+        cantidadDeGansgters = 1.max(nuevaCantidad)
+    }
+
+    method esVeloz() = cantidadDeGansgters < 7
+
+    method viajar(){
+        console.println("No le sucede nada a la Antigualla 
+        Blindada al viajar.")
+    }
+}
+
+/*
+El Todo Terreno empieza siempre con 80 de combustible y va
+disminuyendo de a 10 por cada loma que pasa, si pasa mas de
+3 lomas el vehiculo se vuelve lento, pero empieza rapido. 
+Se debe recargar el combustible
+*/
+
+object elTodoTerreno{
+    var combustible = 80
+    var cantidadDeLomas = 0
+
+    method combustible() = combustible
+
+    method pasarLoma(){
+        cantidadDeLomas += 1
+    }
+
+    method esVeloz() = cantidadDeLomas < 3
 
     method viajar(){
         combustible = 0.max(combustible - 10)
+    }
+
+    method recargarCombustible(){
+        combustible = 80
+    }
+
+}
+
+/*
+La Ranchera Oxiadada empieza con 50 de combustible y cada vez que viaja 
+consume 10, pero por cada pasajero que transporta se le multiplica su
+consumo. Es un vehiculo lento que necesita recargar su combustible.
+Empieza con un pasajero y ese es su minimo.
+*/
+
+object laRancheraOxidada{
+    var combustible = 50
+    var pasajerosAbordo = 1
+
+    method combustible() = combustible
+
+    method esVeloz() = false
+
+    method viajar(){
+        combustible = 0.max(combustible - 10*pasajerosAbordo)
+    }
+
+    method cambiarCantidadDePasajeros(nuevaCantidad){
+        pasajerosAbordo = nuevaCantidad
     }
 
     method recargarCombustible(){
