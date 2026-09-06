@@ -8,13 +8,10 @@ object paris{
 
     method viajar(){
         if(luke.vehiculo().combustible() >= 10){
-            luke.vehiculo().viajar()
+            luke.vehiculo().conducir()
             luke.cambiarRecuerdo(self.recuerdo())
             luke.cambiarCiudadHomenajeada(self)
             luke.sumarLugarVisitado()
-        }
-        else{
-            console.println("No hay suficiente combustible para viajar a París.")
         }
     }
 }
@@ -40,13 +37,10 @@ object buenosAires{
 
     method viajar(){
         if(luke.vehiculo().esVeloz()){
-            luke.vehiculo().viajar()
+            luke.vehiculo().conducir()
             luke.cambiarRecuerdo(self.recuerdo())
             luke.cambiarCiudadHomenajeada(self)
             luke.sumarLugarVisitado()
-        }
-        else{
-            console.println("El vehículo no es lo suficientemente veloz para viajar a Buenos Aires.")
         }
     }
 }
@@ -70,7 +64,7 @@ object bagdad{
     }
 
     method viajar(){
-        luke.vehiculo().viajar()
+        luke.vehiculo().conducir()
         luke.cambiarRecuerdo(self.recuerdo())
         luke.cambiarCiudadHomenajeada(self)
         luke.sumarLugarVisitado()
@@ -98,17 +92,14 @@ Crear también una ciudad más, respetando lo indicado anteriormente.
 */
 
 object rioDeJanerio{
-    method recuerdo() = "figurita del cristo redenton" 
+    method recuerdo() = "figurita del cristo redentor" 
 
     method viajar(){
         if(luke.vehiculo().combustible() > 20){
-            luke.vehiculo().viajar()
+            luke.vehiculo().conducir()
             luke.cambiarRecuerdo(self.recuerdo())
             luke.cambiarCiudadHomenajeada(self)
             luke.sumarLugarVisitado()
-        }
-        else{
-            console.println("No hay suficiente combustible para viajar a Río de Janeiro.")
         }
     }
 }

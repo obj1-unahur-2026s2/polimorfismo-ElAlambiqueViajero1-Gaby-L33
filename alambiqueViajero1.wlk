@@ -13,10 +13,10 @@ homenajeando
 */
 
 object luke{
-    var recuerdoActual = "Ninguno"
+    var recuerdoActual = paris.recuerdo()
     var vehiculoActual = alambiqueVeloz
     var ciudadHomenajeadaActual = paris
-    var cantidadDeLugaresVisitados = 0
+    var cantidadDeLugaresVisitados = 1
 
     method ciudadHomenajeada() = ciudadHomenajeadaActual
 
@@ -38,11 +38,6 @@ object luke{
         vehiculoActual = nuevoVehiculo
     }
 
-    method viajarALasVegas(){
-
-        cantidadDeLugaresVisitados += 1
-    }
-
     method recuerdo() = recuerdoActual
 
     method lugaresVisitados() = cantidadDeLugaresVisitados
@@ -62,7 +57,7 @@ object alambiqueVeloz{
 
     method esVeloz() = true
 
-    method viajar(){
+    method conducir(){
         combustible = 0.max(combustible - 10)
     }
 
@@ -86,11 +81,11 @@ object superChatarraEspecial{
 
     method combustible() = combustible
 
-    method losCañoneEstanPuestos() = cañionesPuestos
+    method losCañionesEstanPuestos() = cañionesPuestos
 
     method esVeloz() = false
 
-    method viajar(){
+    method conducir(){
         if(not cañionesPuestos){
             cañionesPuestos = true
             combustible = 50
@@ -122,9 +117,8 @@ object antiguallaBlindada{
 
     method esVeloz() = cantidadDeGansgters < 7
 
-    method viajar(){
-        console.println("No le sucede nada a la Antigualla 
-        Blindada al viajar.")
+    method conducir(){
+        self.combustible()
     }
 }
 
@@ -147,7 +141,7 @@ object elTodoTerreno{
 
     method esVeloz() = cantidadDeLomas < 3
 
-    method viajar(){
+    method conducir(){
         combustible = 0.max(combustible - 10)
     }
 
@@ -172,7 +166,7 @@ object laRancheraOxidada{
 
     method esVeloz() = false
 
-    method viajar(){
+    method conducir(){
         combustible = 0.max(combustible - 10*pasajerosAbordo)
     }
 
